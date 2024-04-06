@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./bootstrap_serv/link') %>
+    <title>Blog</title>
+</head>
+<body>
+    <%- include('./bootstrap_serv/nav') %>
+    <%- include('./bootstrap_serv/scripts') %>
+   <div class="container mt-5">
+    <h1><%= blogs.Title %></h1>
+    <img src="<%= blogs.coverImageUrl %>" width="700px"/>
+    <pre class="mt-3 " ><%= blogs.Content %></pre>
+   </div>
+
+   <div  class="container mt-5">
+    <img src="<%= blogs.CreatedBy.profileImageUrl %>" width="50px"/>   <%= blogs.CreatedBy.FullName %>
+    
+   </div>
+   <div  class="container mt-5">
+    <h1>COMMENTS <%= (locals.comments).length %></h1>
+  <% if (locals.user) { %>
+    <form method="post" action="/blog/comment/<%= blogs._id %>">
+        <div class="container mt-5 "  >
+            
+            <input type="text" class="form-control" id="comment"  placeholder="Enter your comment"
+            name="comment">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+      
+  <% } %>
+
+  <div class="mt-3">
+   <% comments.forEach(comment =>{ %>
+    <div>
+      <img src="<%= comment.CreatedBy.profileImageUrl %>" width="50px"/>   <%= comment.CreatedBy.FullName %>
+      <pre><%= comment.comment %></pre>
+    </div>
+   <% }) %>
+      
+    
+  </div>
+   </div>
+   
+</body>
+</html>

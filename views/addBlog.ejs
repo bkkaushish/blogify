@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./bootstrap_serv/link') %>
+    <title>Add New Blog Page</title>
+</head>
+<body>
+    <%- include('./bootstrap_serv/nav') %>
+    <%- include('./bootstrap_serv/scripts') %>
+    <div class="container ">
+    <form method="post" action="/addblog" enctype="multipart/form-data">
+        <div class=" mt-5">
+            <label for="coverImage" class="form-label">Cover Image:</label>
+            <input type="file" class="form-control" id="coverImage" aria-describedby="coverImage"
+            name="coverImage">
+          </div>
+        <div class=" mt-5">
+            <label for="Title" class="form-label">Title:</label>
+            <input type="text" class="form-control" id="Title" aria-describedby="Title"
+            name="Title">
+          </div>
+          <div class="form-floating mt-3">
+            <label for="Content">Content:</label>
+            <textarea class="form-control"  id="Content" name="Content"  style="height: 100px"></textarea>
+            
+          </div>
+          <button type="submit" class="btn btn-primary mt-3">Submit</button>
+
+
+    </form>
+</div>
+</body>
+</html>

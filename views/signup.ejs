@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./bootstrap_serv/link') %>
+    <title>SignUp</title>
+</head>
+<body>
+    <%- include('./bootstrap_serv/nav') %>
+      <%- include('./bootstrap_serv/scripts') %>
+    <form method="post" action="/signup">
+        <div class="mb-3 mt-5 "  >
+            <label for="FullName" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="FullName" aria-describedby="FullName"
+            name="FullName">
+          </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="Email" aria-describedby="emailHelp"
+          name="Email">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" id="Password"
+          name="Password">
+        </div>
+        <button type="submit" class="btn btn-primary">SignUp</button>
+      </form>
+      
+</body>
+</html>
