@@ -29,7 +29,7 @@ routers.post("/signup",async (req,res)=>{
     Email,
     Password,
    });
-   return res.redirect("/");
+   return res.redirect("/signin");
 });
 
 
